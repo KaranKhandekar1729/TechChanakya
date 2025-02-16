@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    text-decoration: none;
+}
+
+body {
+    background: black;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    color: orange;
+}
+
+
+.button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s;
+  }
+  
+.button:hover::before {
+    left: 100%;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    filter: blur(150px);
+    opacity: 0.5;
+}
+
+.shape:nth-child(1) {
+    background: linear-gradient(45deg, red, rgb(153, 83, 94));
+    width: 600px;
+    height: 600px;
+    left: -300px;
+    top: -300px;
+    animation: float 15s infinite alternate;
+}
+
+.shape:nth-child(2) {
+    background: linear-gradient(45deg, #f70202, #f83803);
+    width: 400px;
+    height: 400px;
+    bottom: 100px;
+    right: 50px;
+    filter: blur(150px);
+    animation: float 8s infinite alternate-reverse;
+}
+
+.shape:nth-child(3) {
+    background: linear-gradient(-45deg, rgb(6, 243, 6), rgb(46, 191, 46));
+    width: 200px;
+    height: 500px;
+    bottom: -250px;
+    right: 250px;
+    animation: float 10s infinite alternate-reverse;
+}
+
+.shape:nth-child(4) {
+    background: linear-gradient(55deg, rgb(205, 54, 192), rgb(104, 10, 51));
+    width: 600px;
+    height: 500px;
+    bottom: 250px;
+    right: 500px;
+    filter: blur(120px);
+    animation: float 5s infinite alternate;
+}
+
+.shape:nth-child(5) {
+    background: linear-gradient(5deg, rgb(45, 129, 198), rgb(60, 121, 207));
+    width: 400px;
+    height: 500px;
+    top: 250px;
+    right: 800px;
+    filter: blur(150px);
+    animation: float 5s infinite alternate-reverse;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(50px, 50px) rotate(360deg);
+    }
+}
+
+header {
+    padding: 20px 2%;
+}
+
+nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    background: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    z-index: 2;
+    padding: 10px;
+    margin: 20px 10px 20px 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+} 
+
+nav ul li a:hover {
+    color: orange;
+}
+
+nav ul li a:active {
+    color: orange;
+}
+
+nav .logo {
+    color: orange;
+    margin-left: 8px;
+}
+
+.hero-btn {
+    width: 20%;
+}
+
+nav .signIn {
+    padding: 15px 15px 15px 15px;
+    margin: 0;
+    border-radius: 10px;
+    border: 1px solid rgb(95, 95, 95);
+    background: black;
+    color: white;
+    display: inline-block;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+nav .signIn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+  
+nav .signIn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s;
+}
+  
+nav .signIn:hover::before {
+    left: 100%;
+}
+
+nav .signIn:hover {
+    border: 1px solid rgb(136, 136, 136);
+}
+
+nav .signIn:hover {
+    border: 1px solid rgb(136, 136, 136);
+}
+
+main {
+    flex-grow: 1;
+    padding: 50px 5%;
+    width: 97%;
+    position: relative;
+    top: 60px;
+    left: 50%;
+    translate: -50%;
+    border-radius: 15px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-weight: 300;
+    font-size: 10rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.events {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    translate: -50%;
+    top: 100%;
+    background: black;
+    padding: 50px;
+}
+
+.event {
+    font-size: 6rem;
+    color: white;
+    border-bottom: 1px solid goldenrod;
+}
+
+/* Login page */
+
+.container {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    z-index: 1;
+    top: 20%;
+}
+
+.signin-form {
+    left: 187%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    color: #ffff;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-bottom-color: #fff;
+  }
+  
+  label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+  
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s;
+  }
+  
+  button:hover::before {
+    left: 100%;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 1em;
+    color: goldenrod;
+    backdrop-filter: blur(10px);
+    background-color: rgba(10, 10, 10, 0.5);
+}
+
+  
+  
